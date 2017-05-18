@@ -16,7 +16,12 @@
 const dnode = require('dnode');
 
 // Import server controller variables
-const { port, methods, listenServerCallback } = require('./controllers/server');
+const {
+  port,
+  host,
+  methods,
+  listenServerCallback
+} = require('./controllers/server');
 
 //------------------------------------------------------------------------------
 
@@ -27,6 +32,6 @@ const server = dnode(methods);
 //------------------------------------------------------------------------------
 
 // Start server
-server.listen(port, listenServerCallback);
+server.listen(host, port, listenServerCallback);
 
 //------------------------------------------------------------------------------

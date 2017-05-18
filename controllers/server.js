@@ -22,6 +22,9 @@ const mouseController = require('./mouse');
 // Default port to debug 5050
 const port = normalizePort(process.env.port);
 
+// Set value of environment variable 'host' or 'localhost' value
+const host = process.env.host || '127.0.0.1';
+
 // Methods implementing a remote control
 // See mouse.js and keyboard.js in 'controllers' folder for other information
 const methods = {
@@ -45,7 +48,7 @@ function listenServerCallback(error) {
     throw error;
   }
 
-  console.log(`Server started on ${port}!`);
+  console.log(`Server started on ${host}:${port}!`);
 }
 
 //------------------------------------------------------------------------------
@@ -54,5 +57,6 @@ function listenServerCallback(error) {
 exports.listenServerCallback = listenServerCallback;
 exports.methods = methods;
 exports.port = port;
+exports.host = host;
 
 //------------------------------------------------------------------------------
