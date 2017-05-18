@@ -19,8 +19,39 @@ const robot = require('robotjs');
 // Input: Object {x, y} - mouse position
 function moveMouse({x = 0, y = 0}) {
   try {
-    robot.moveMouse(x, y)
-  } catch(err) {
+      robot.moveMouseSmooth(x, y);
+  } catch (err) {
+    // Only on debug
+    console.error(err);
+  }
+}
+
+// Function for emulate mouse click
+// Input: button - left|right|middle, isDouble (double click) - boolean
+function mouseClick(button = 'left', isDouble = false) {
+  try {
+    robot.mouseClick(button, isDouble);
+  } catch (err) {
+    // Only on debug
+    console.error(err);
+  }
+}
+
+// Function for emulate mouse toggle
+// Input: state - up|down, button - left|right|middle
+function mouseToggle(state = 'down', button = 'left') {
+  try {
+    robot.mouseToggle(state, button);
+  } catch (err) {
+    // Only on debug
+    console.error(err);
+  }
+}
+
+function scrollMouse({x = 0, y = 0}) {
+  try {
+    robot.scrollMouse(x, y);
+  } catch (err) {
     // Only on debug
     console.error(err);
   }
@@ -30,5 +61,8 @@ function moveMouse({x = 0, y = 0}) {
 
 // Export
 exports.moveMouse = moveMouse
+exports.mouseClick = mouseClick
+exports.mouseToggle = mouseToggle
+exports.scrollMouse = scrollMouse
 
 //------------------------------------------------------------------------------

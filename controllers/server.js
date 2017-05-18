@@ -25,7 +25,12 @@ const port = normalizePort(process.env.port);
 // Methods implementing a remote control
 // See mouse.js and keyboard.js in 'controllers' folder for other information
 const methods = {
+  // Mouse
   moveMouse: mouseController.moveMouse,
+  mouseClick: mouseController.mouseClick,
+  mouseToggle: mouseController.mouseToggle,
+  scrollMouse: mouseController.scrollMouse,
+  // Keyboard
   typeString: keyboardController.typeString
 };
 

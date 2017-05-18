@@ -20,7 +20,7 @@ const robot = require('robotjs');
 function typeString(textString = '') {
   try {
     robot.typeString(textString)
-  } catch(err) {
+  } catch (err) {
     // Only on debug
     console.error(err);
   }
