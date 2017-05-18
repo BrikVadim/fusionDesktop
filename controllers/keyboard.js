@@ -26,9 +26,33 @@ function typeString(textString = '') {
   }
 }
 
+// Function for emulate key taps
+// Input: key - key string, modified - alt|command/win|control|shift
+function keyTap(key = '', modified = []) {
+  try {
+    robot.keyTap(key, modified)
+  } catch (err) {
+    // Only on debug
+    console.error(err);
+  }
+}
+
+// Function for emulate keyboard toggle
+// Input: key-key string, state-up|down,  modified-alt|command/win|control|shift
+function keyToggle(key = '', state = 'down', modified = []) {
+  try {
+    robot.keyToggle(key, state, modified);
+  } catch (err) {
+    // Only on debug
+    console.error(err);
+  }
+}
+
 //------------------------------------------------------------------------------
 
 //Export
-exports.typeString = typeString
+exports.typeString = typeString;
+exports.keyTap = keyTap;
+exports.keyToggle = keyToggle;
 
 //------------------------------------------------------------------------------

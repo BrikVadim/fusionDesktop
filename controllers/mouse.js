@@ -17,7 +17,7 @@ const robot = require('robotjs');
 
 // Function for change mouse position
 // Input: Object {x, y} - mouse position
-function moveMouse({x = 0, y = 0}) {
+function moveMouse({ x = 0, y = 0 }) {
   try {
       robot.moveMouseSmooth(x, y);
   } catch (err) {
@@ -48,9 +48,10 @@ function mouseToggle(state = 'down', button = 'left') {
   }
 }
 
-function scrollMouse({x = 0, y = 0}) {
+// TODO: Scroll don't work!
+function scrollMouse({ value = 0, direction = 'down' }) {
   try {
-    robot.scrollMouse(x, y);
+    robot.scrollMouse(value, direction);
   } catch (err) {
     // Only on debug
     console.error(err);
@@ -60,9 +61,9 @@ function scrollMouse({x = 0, y = 0}) {
 //------------------------------------------------------------------------------
 
 // Export
-exports.moveMouse = moveMouse
-exports.mouseClick = mouseClick
-exports.mouseToggle = mouseToggle
-exports.scrollMouse = scrollMouse
+exports.moveMouse = moveMouse;
+exports.mouseClick = mouseClick;
+exports.mouseToggle = mouseToggle;
+exports.scrollMouse = scrollMouse;
 
 //------------------------------------------------------------------------------

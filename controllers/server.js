@@ -31,7 +31,9 @@ const methods = {
   mouseToggle: mouseController.mouseToggle,
   scrollMouse: mouseController.scrollMouse,
   // Keyboard
-  typeString: keyboardController.typeString
+  typeString: keyboardController.typeString,
+  keyTap: keyboardController.keyTap,
+  keyToggle: keyboardController.keyToggle
 };
 
 //------------------------------------------------------------------------------
