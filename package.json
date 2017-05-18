@@ -1,0 +1,25 @@
+{
+  "name": "fusiondesktop",
+  "version": "0.2.1",
+  "description": "Remote control client",
+  "main": "app.js",
+  "dependencies": {
+    "dnode": "^1.2.2",
+    "is-root": "^1.0.0",
+    "robotjs": "^0.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrikVadim/fusionDesktop.git"
+  },
+  "author": "Vadim Brik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrikVadim/fusionDesktop/issues"
+  },
+  "homepage": "https://github.com/BrikVadim/fusionDesktop#readme"
+}
